@@ -29,7 +29,7 @@ const getAnimaisById = (req, res) => {
     });
 }
 
-const creatAnimal = (req, res) => {
+const createAnimal = (req, res) => {
     const {nome, especie, raca, idade, peso, propietário, vacinado} = req.body;
     
     if(!nome || !especie || !raca || !idade || !peso) {
@@ -60,4 +60,4 @@ const creatAnimal = (req, res) => {
 }
 
 
-export {getAllAnimais, getAnimaisById};
+export {getAllAnimais, getAnimaisById, createAnimal};
