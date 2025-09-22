@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
     res.send(`Servidor rodando...`);
 });
 
+app.use("/animais", animaisRoutes);
 
 app.listen(serverPort, () => {
     console.log(`Servidor rodando em: http://localhost:${serverPort} `);
