@@ -114,9 +114,24 @@ const updateAnimais = (req, res) => {
     const animaisAtualizados = animais.map(animal => animal.id === idParaEditar ? {
         ...animal,
         ...(nome && {nome}),
-    }
+        ...(especie && {especie}),
+        ...(raca && {raca}),
+        ...(idade && {idade}),
+        ...(peso && {peso}),
+        ...(propietário && {propietário}),
+        ...(vacinado && {vacinado})
 
+    }
+        :animais
     );
+
+    animais.splice(0, animais.length, ...animaisAtualizados);
+    const animalEditado = animais.find(animal => animal.id === idParaEditar);
+    res.status(200).json({
+        success: true,
+        message: "Os dados foram atualizados com sucesso",
+        animal: animalEditado
+    });
 }
 
-export {getAllAnimais, getAnimaisById, createAnimal};
+export {getAllAnimais, getAnimaisById, createAnimal, deleteAnimal, updateAnimais};
