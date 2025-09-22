@@ -59,5 +59,16 @@ const createAnimal = (req, res) => {
     });
 }
 
+const deleteAnimal = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    if(isNaN(id)) {
+        return res.status(400).json({
+            success: false,
+            message:`O animal com o id: ${id} não existe!`
+        });
+    }
+}
+
 
 export {getAllAnimais, getAnimaisById, createAnimal};
