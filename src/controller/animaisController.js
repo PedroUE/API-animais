@@ -88,8 +88,6 @@ const deleteAnimal = (req, res) => {
     });
 }
 
-
-
 const updateAnimais = (req, res) => {
     const id = parseInt(req.params.id);
     const {nome, especie, raca, idade, peso, propietário, vacinado} = req.body
@@ -133,5 +131,6 @@ const updateAnimais = (req, res) => {
         animal: animalEditado
     });
 }
+
 
 export {getAllAnimais, getAnimaisById, createAnimal, deleteAnimal, updateAnimais};

@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import animaisRoutes from "./src/routes/animaisRoutes.js";
 
 const app = express();
 app.use(express.json());
